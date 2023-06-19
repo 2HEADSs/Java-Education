@@ -8,7 +8,11 @@ public class evenorOdd {
 
         int a = Integer.parseInt(scanner.nextLine());
 
-
+        if (a % 2 == 0) {
+            System.out.println("even");
+        } else {
+            System.out.println("odd");
+        }
 
     }
 }
