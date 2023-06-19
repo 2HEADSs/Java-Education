@@ -29,9 +29,7 @@ public class areaofFigures {
             area = (a * ha) /2;
         }
 
-
         System.out.printf("%.3f", area);
-
 
     }
 }
