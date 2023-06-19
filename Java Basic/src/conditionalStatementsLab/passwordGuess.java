@@ -7,6 +7,7 @@ public class passwordGuess {
         Scanner scanner = new Scanner(System.in);
 
         String pass = "s3cr3t!P@ssw0rd";
+
         String input = scanner.nextLine();
 
         if (pass.equals(input)) {
