@@ -9,7 +9,7 @@ public class passwordGuess {
         String pass = "s3cr3t!P@ssw0rd";
         String input = scanner.nextLine();
 
-        if (input  === pass) {
+        if (pass.equals(input)) {
             System.out.println("Welcome");
         } else {
             System.out.println("Wrong password!");
