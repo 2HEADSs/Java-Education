@@ -1,7 +1,4 @@
 package conditionalStatementsAdvancedLab;
-//•	dog -> mammal
-//        •	crocodile, tortoise, snake -> reptile
-//        •	others -> unknown
 
 import java.util.Scanner;
 
