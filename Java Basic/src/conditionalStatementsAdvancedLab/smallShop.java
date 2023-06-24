@@ -50,5 +50,7 @@ public class smallShop {
             }
         }
 
+        double result = quantity * price;
+        System.out.println(result);
     }
 }
