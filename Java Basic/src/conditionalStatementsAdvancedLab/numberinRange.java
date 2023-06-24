@@ -8,10 +8,10 @@ public class numberinRange {
 
         double num = Double.parseDouble(scanner.nextLine());
 
-        if(num >=-100 && num <=100 && num != 0){
+        if(num >= -100 && num <= 100 && num != 0){
             System.out.println("Yes");
         } else {
-            System.out.println("Yes");
+            System.out.println("No");
         }
     }
 }
