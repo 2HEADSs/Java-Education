@@ -6,8 +6,8 @@ public class personalTitles {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String gender = scanner.nextLine();
         double age = Double.parseDouble(scanner.nextLine());
+        String gender = scanner.nextLine();
 
         if(gender.equals("m")){
             if(age >=16){
