@@ -10,10 +10,17 @@ public class building {
 
         for(int f = floors; f >= 1; f--){
             for(int r = 0; r<rooms; r++){
-                System.out.printf("%d%d", f, r);
+                if(f == floors){
+                System.out.printf("L%d%d", f, r);
+                }else if(f %2 == 0){
+                System.out.printf("O%d%d", f, r);
+                } else {
+                    System.out.printf("A%d%d", f, r);
+                }
+
             }
+            System.out.println();
         }
     }
-
-
+    
 }
