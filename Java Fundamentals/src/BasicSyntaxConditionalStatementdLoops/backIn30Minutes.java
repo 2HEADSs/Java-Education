@@ -1,3 +1,5 @@
+package BasicSyntaxConditionalStatementdLoops;
+
 import java.util.Scanner;
 
 public class backIn30Minutes {
