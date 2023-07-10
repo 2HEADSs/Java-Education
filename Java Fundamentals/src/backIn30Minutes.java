@@ -2,15 +2,21 @@ import java.util.Scanner;
 
 public class backIn30Minutes {
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-    int hours = scanner.nextInt();
-    int minutes = scanner.nextInt();
+        int hours = scanner.nextInt();
+        int minutes = scanner.nextInt();
 
+        minutes += 30;
 
+        if (minutes > 59) {
+            hours++;
+            minutes -= 60;
+        }
 
-        System.out.printf("%d:%d", hours, minutes);
+        if (hours > 23) {
+            hours -= 24;
+        }
+        System.out.printf("%d:%02d", hours, minutes);
     }
-
-
 }
