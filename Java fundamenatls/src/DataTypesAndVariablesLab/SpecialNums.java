@@ -23,7 +23,7 @@ public class SpecialNums {
             if(sum == 5 || sum == 11 || sum == 7 ){
                 System.out.println(i + " -> True" );
             } else {
-                System.out.printf("%d -> False" , i);
+                System.out.println(i + " -> False" );
             }
 
         }
