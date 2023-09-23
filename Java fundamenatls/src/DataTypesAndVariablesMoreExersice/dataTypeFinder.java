@@ -26,14 +26,25 @@ public class dataTypeFinder {
                 for (int i = 0; i < input.length(); i++) {
                     char currentSymbol = input.charAt(i);
 
-                    if(currentSymbol < 47 || currentSymbol >58) {
+                    if(currentSymbol < 45 || currentSymbol >57) {
                         isString = true;
                     }
                     if(currentSymbol == 46){
                         isFloat = true;
                     }
                 }
+                if(isString){
+                    type = "string";
+                } else  {
+                    if(isFloat){
+                        type = "floating point";
+                    } else {
+                        type = "integer";
+
+                    }
+                }
             }
+            System.out.printf("%s is %s type%n", input, type);
             input = scanner.nextLine();
 
         }
