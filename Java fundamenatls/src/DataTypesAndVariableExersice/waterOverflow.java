@@ -9,12 +9,12 @@ public class waterOverflow {
         int currentLiters = 0;
 
         int n = Integer.parseInt(scanner.nextLine());
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             int pouredLiters = Integer.parseInt((scanner.nextLine()));
             currentLiters += pouredLiters;
-            if(pouredLiters > capacity){
+            if(currentLiters > capacity){
                 System.out.println("Insufficient capacity!");
-                currentLiters-=pouredLiters;
+                currentLiters -= pouredLiters;
             }
         }
         System.out.println(currentLiters);
