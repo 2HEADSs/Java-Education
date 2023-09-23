@@ -8,10 +8,11 @@ public class dataTypeFinder {
 
         String input = scanner.nextLine();
 
-        while (!input.equals("END") ){
+        while (!input.equals("END")) {
             String type = "";
 
             input = scanner.nextLine();
+
         }
 
     }
