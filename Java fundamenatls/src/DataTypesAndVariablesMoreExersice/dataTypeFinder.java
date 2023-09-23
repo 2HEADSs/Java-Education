@@ -10,7 +10,7 @@ public class dataTypeFinder {
 
         while (!input.equals("END")) {
             String type = "";
-            if(input.equals("true") || input.equals("false")){
+            if(input.equals("true") || input.equals("false")){}
             input = scanner.nextLine();
 
         }
