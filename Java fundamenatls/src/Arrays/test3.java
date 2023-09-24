@@ -1,5 +1,6 @@
 package Arrays;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
 public class test3 {
@@ -17,14 +18,16 @@ public class test3 {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
-
+        System.out.println("------------------------");
         for (int i = 0; i < numbers.length / 2; i++) {
             int otherIndex = numbers.length - 1 - i;
             int currentNum =  numbers[i];
             numbers[i] = numbers[otherIndex];
-            numbers[otherIndex] = numbers[i];
+            numbers[otherIndex] = currentNum;
 
         }
-
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i] + " ");
+        }
     }
 }
