@@ -16,7 +16,7 @@ public class equalArrays {
         for (int i = 0; i < firstArray.length - 1; i++) {
 
             if(Integer.parseInt(firstArray[i]) == Integer.parseInt(secondArray[i])){
-                sum += Integer.parseInt(firstArray[i]) + Integer.parseInt(secondArray[i]);
+                sum += (Integer.parseInt(firstArray[i]) + Integer.parseInt(secondArray[i]));
             } else {
                 areIdentical = false;
                 System.out.printf("Arrays are not identical. Found difference at %d index.", i);
