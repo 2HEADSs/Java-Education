@@ -9,14 +9,22 @@ public class test3 {
 
         String[] numberAsString = lineOfNumber.split("\\s+");
 
-        int [] numbers = new int[numberAsString.length];
+        int[] numbers = new int[numberAsString.length];
 
         for (int i = 0; i < numbers.length; i++) {
-                numbers[i]= Integer.parseInt(numberAsString[i]);
+            numbers[i] = Integer.parseInt(numberAsString[i]);
         }
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
+        }
+
+        for (int i = 0; i < numbers.length / 2; i++) {
+            int otherIndex = numbers.length - 1 - i;
+            int currentNum =  numbers[i];
+            numbers[i] = numbers[otherIndex];
+            numbers[otherIndex] = numbers[i];
 
         }
+
     }
 }
