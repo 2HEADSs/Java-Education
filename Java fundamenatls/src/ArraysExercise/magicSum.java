@@ -17,7 +17,7 @@ public class magicSum {
             for(int j = i+1; j<numbers.length; j++){
                 int secondNum = numbers[j];
                 if(firstNum + secondNum == magicSum){
-                    System.out.printf(firstNum + " " + secondNum+ "\n");
+                    System.out.println(firstNum + " " + secondNum);
                 }
             }
         };
