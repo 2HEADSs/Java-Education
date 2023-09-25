@@ -1,5 +1,6 @@
 package ArraysExercise;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class train {
@@ -13,10 +14,13 @@ public class train {
         for (int i = 0; i < train.length; i++) {
             train[i] = Integer.parseInt(scanner.nextLine());
             countPassenger += train[i];
-        }
-        for (int i = 0; i < train.length; i++) {
             System.out.print(train[i] +" ");
+
         }
+//        for (int i = 0; i < train.length; i++) {
+//            System.out.print(train[i] +" ");
+//        }
+//        Arrays.stream(train).forEach(wagon -> System.out.print(wagon + " "));
         System.out.println();
         System.out.println(countPassenger);
 //        add empty line before "countPassenger"
