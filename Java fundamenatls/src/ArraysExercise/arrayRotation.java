@@ -7,6 +7,14 @@ public class arrayRotation {
         Scanner scanner = new Scanner(System.in);
         String [] input = scanner.nextLine().split(" ");
         int cycles = scanner.nextInt();
-        System.out.println(cycles);
+
+        for (int i = 0; i < cycles; i++) {
+            String firstEl = input[0];
+            for(int j = 0; j <input.length -1; j++){;
+                    input[j] = input[j+1] ;
+            };
+            input[input.length-1] = firstEl;
+        }
+        System.out.println(String.join(" ", input));
     }
 }
