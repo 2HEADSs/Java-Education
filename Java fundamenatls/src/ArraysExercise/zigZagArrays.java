@@ -21,11 +21,11 @@ public class zigZagArrays {
             }
         }
         for (String elFirstArr: firstArray){
-            System.out.printf(elFirstArr +" ");
+            System.out.print(elFirstArr +" ");
         }
         System.out.println();
         for (String elSecondArr: secondArray){
-            System.out.printf(elSecondArr+" ");
+            System.out.print(elSecondArr+" ");
         }
     }
 }
