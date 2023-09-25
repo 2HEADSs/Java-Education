@@ -12,7 +12,7 @@ public class test {
                 .split(" "))
                 .mapToInt(e -> Integer.parseInt(e))
                 .toArray();
-        System.out.println(numbers);
+        System.out.println(numbers[0]);
 
     }
 }
