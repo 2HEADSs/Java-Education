@@ -10,9 +10,9 @@ public class signOfIntegerNumbers {
 
     private static void printSign(int number) {
         if(number >= 0){
-            System.out.println("The number " + number + " is positive");
+            System.out.println("The number " + number + " is positive.");
         } else  {
-            System.out.println("The number " + number + " is negative");
+            System.out.println("The number " + number + " is negative.");
 
         }
     }
