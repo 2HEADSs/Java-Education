@@ -3,9 +3,12 @@ package Methods;
 import java.util.Scanner;
 
 public class Grades {
-     Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        printGradeInWords(Integer.parseInt(sc.nextLine()));
+
+        int number = new Scanner(System.in).nextInt();
+        printGradeInWords(number);
+
+
     }
     private static void  printGradeInWords(int grade){
         if(grade>=2.00 && grade <=2.99){
