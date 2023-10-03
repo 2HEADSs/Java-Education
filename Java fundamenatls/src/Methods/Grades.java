@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Grades {
     public static void main(String[] args) {
 
-        int number = new Scanner(System.in).nextInt();
+        double number = new Scanner(System.in).nextDouble();
         printGradeInWords(number);
 
 
     }
-    private static void  printGradeInWords(int grade){
+    private static void  printGradeInWords(double grade){
         if(grade>=2.00 && grade <=2.99){
             System.out.println("Fail");
         } else  if(grade>=3.00 && grade <=3.49){
