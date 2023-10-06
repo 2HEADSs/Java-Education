@@ -8,18 +8,29 @@ public class calculations {
         String command = scanner.nextLine();
         int firstNum = Integer.parseInt(scanner.nextLine());
         int secondNum = Integer.parseInt(scanner.nextLine());
-        int result = 0;
 
 
         if (command.equals("add")) {
-            result = firstNum + secondNum;
+            add(firstNum,secondNum);
         } else if (command.equals("multiply")) {
-            result = firstNum * secondNum;
+            mult(firstNum,secondNum);
         } else if (command.equals("subtract")) {
-            result = firstNum - secondNum;
+            subs(firstNum,secondNum);
         } else if (command.equals("divide")) {
-            result = firstNum / secondNum;
+            divide(firstNum,secondNum);
         }
-        System.out.println(result);
+    }
+
+    public static void add(int a, int b) {
+        System.out.println(a + b);
+    }
+    public static void mult(int a, int b) {
+        System.out.println(a * b);
+    }
+    public static void subs(int a, int b) {
+        System.out.println(a - b);
+    }
+    public static void divide(int a, int b) {
+        System.out.println(a / b);
     }
 }
