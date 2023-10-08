@@ -9,11 +9,33 @@ public class sumAdjacentEqualNumbers {
         Scanner scanner = new Scanner(System.in);
         List<Double> numbers = nextLineOfDoubles(scanner);
 
-//        for (double number : numbers) {
-//            System.out.println(number);
-//        }
+        List<Double> nextNumbers = sumAdjacentNumbers(numbers);
+        while (nextNumbers.size() != numbers.size()) {
+            numbers = nextNumbers;
+            nextNumbers = sumAdjacentNumbers(numbers);
+        }
+
+        for (double number : numbers) {
+            System.out.println(number);
+        }
 
 
+    }
+
+    private static List<Double> sumAdjacentNumbers(List<Double> numbers) {
+        List<Double> nextNums = new ArrayList<>();
+        int i = 0;
+        while (i < numbers.size()) {
+
+            if (i < nextNums.size() - 1 && numbers.get(i) == numbers.get(i++)) {
+                nextNums.add(numbers.get(i) + numbers.get(i++));
+                i += 2;
+            } else {
+                nextNums.add(numbers.get(i));
+                i++;
+            }
+        }
+        return nextNums;
     }
 
 
@@ -25,5 +47,7 @@ public class sumAdjacentEqualNumbers {
             numbers.add(Double.parseDouble(s));
         }
         return numbers;
-    };
+    }
+
+    ;
 }
