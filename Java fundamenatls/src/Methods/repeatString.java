@@ -5,13 +5,9 @@ import java.util.Scanner;
 public class repeatString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int repetitions = Integer.parseInt(scanner.nextLine());
-
         String s = scanner.nextLine();
-
-        String repeated = repeatedString(s, repetitions);
-
-        System.out.println(repeated);
+        int repetitions = Integer.parseInt(scanner.nextLine());
+        System.out.println(repeatedString(s, repetitions));
     }
 
     private static String repeatedString(String s, int repetitions) {
@@ -21,7 +17,5 @@ public class repeatString {
         }
         String repeated = String.join("", strings);
         return repeated;
-    }
-
-    ;
+    };
 }
