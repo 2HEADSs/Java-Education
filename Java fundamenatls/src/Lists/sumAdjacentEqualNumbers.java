@@ -15,9 +15,9 @@ public class sumAdjacentEqualNumbers {
             nextNumbers = sumAdjacentNumbers(numbers);
         }
 
-        for (double number : numbers) {
-            System.out.println(number);
-        }
+    //TODO print as documents
+            System.out.println(numbers);
+
 
 
     }
@@ -26,9 +26,11 @@ public class sumAdjacentEqualNumbers {
         List<Double> nextNums = new ArrayList<>();
         int i = 0;
         while (i < numbers.size()) {
+            double first = numbers.get(i);
+//            double second = numbers.get(i + 1);
 
-            if (i < nextNums.size() - 1 && numbers.get(i) == numbers.get(i++)) {
-                nextNums.add(numbers.get(i) + numbers.get(i++));
+            if (i < numbers.size() - 1 && numbers.get(i).equals(numbers.get(i + 1)) ) {
+                nextNums.add(numbers.get(i) + numbers.get(i + 1));
                 i += 2;
             } else {
                 nextNums.add(numbers.get(i));
