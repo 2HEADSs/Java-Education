@@ -25,18 +25,19 @@ public class orders {
     }
 
     public static void coffe(int count) {
-        System.out.println(count * 1.50);
+
+        System.out.printf("%.2f", count * 1.50);
     }
 
     public static void water(int count) {
-        System.out.println(count * 1.00);
+        System.out.printf("%.2f", count * 1.00);
     }
 
     public static void coke(int count) {
-        System.out.println(count * 1.40);
+        System.out.printf("%.2f", count * 1.40);
     }
 
     public static void snack(int count) {
-        System.out.println(count * 2.00);
+        System.out.printf("%.2f", count * 2.00);
     }
 }
