@@ -7,7 +7,7 @@ public class calculateRectangleArea {
         Scanner scanner = new Scanner(System.in);
         double width = Double.parseDouble(scanner.nextLine());
         double height = Double.parseDouble(scanner.nextLine());
-        System.out.printf("%.1f", result(width, height));
+        System.out.printf("%.0f", result(width, height));
     }
 
     public static double result(double w, double h) {
