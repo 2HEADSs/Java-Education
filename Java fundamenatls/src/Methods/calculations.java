@@ -8,29 +8,38 @@ public class calculations {
         String command = scanner.nextLine();
         int firstNum = Integer.parseInt(scanner.nextLine());
         int secondNum = Integer.parseInt(scanner.nextLine());
+        int result = 0;
 
 
         if (command.equals("add")) {
-            add(firstNum,secondNum);
+            result = add(firstNum, secondNum);
         } else if (command.equals("multiply")) {
-            mult(firstNum,secondNum);
+            result = mult(firstNum, secondNum);
         } else if (command.equals("subtract")) {
-            subs(firstNum,secondNum);
+            result = subs(firstNum, secondNum);
         } else if (command.equals("divide")) {
-            divide(firstNum,secondNum);
+            result = divide(firstNum, secondNum);
         }
+        System.out.println(result);
     }
 
-    public static void add(int a, int b) {
-        System.out.println(a + b);
+    public static int add(int a, int b) {
+//        System.out.println(a + b);
+        return (a + b);
     }
-    public static void mult(int a, int b) {
-        System.out.println(a * b);
+
+    public static int mult(int a, int b) {
+//        System.out.println(a * b);
+        return (a * b);
     }
-    public static void subs(int a, int b) {
-        System.out.println(a - b);
+
+    public static int subs(int a, int b) {
+//        System.out.println(a * b);
+        return (a - b);
     }
-    public static void divide(int a, int b) {
-        System.out.println(a / b);
+
+    public static int divide(int a, int b) {
+//        System.out.println(a * b);
+        return (a / b);
     }
 }
