@@ -15,12 +15,16 @@ public class sumAdjacentEqualNumbers {
             nextNumbers = sumAdjacentNumbers(numbers);
         }
 
-    //TODO print as documents
+        //TODO print as documents
 
-        for(int i = 0; i < numbers.size(); i ++){
-            System.out.print(numbers.get(i)+ " ");
-        };
+//        for(int i = 0; i < numbers.size(); i ++){
+//            System.out.print(numbers.get(i)+ " ");
+//        };
 
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+        ;
 
 
     }
@@ -32,7 +36,7 @@ public class sumAdjacentEqualNumbers {
             int first = numbers.get(i);
 //            double second = numbers.get(i + 1);
 
-            if (i < numbers.size() - 1 && numbers.get(i).equals(numbers.get(i + 1)) ) {
+            if (i < numbers.size() - 1 && numbers.get(i).equals(numbers.get(i + 1))) {
                 nextNums.add(numbers.get(i) + numbers.get(i + 1));
                 i += 2;
             } else {
