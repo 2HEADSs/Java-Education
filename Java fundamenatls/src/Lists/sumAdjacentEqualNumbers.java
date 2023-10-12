@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class sumAdjacentEqualNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        List<Integer> numbers = nextLineOfDoubles(scanner);
+        List<Integer> numbers = nextLineOfIntegers(scanner);
 
         List<Integer> nextNumbers = sumAdjacentNumbers(numbers);
         while (nextNumbers.size() != numbers.size()) {
@@ -23,8 +23,7 @@ public class sumAdjacentEqualNumbers {
 
         for (int number : numbers) {
             System.out.print(number + " ");
-        }
-        ;
+        };
 
 
     }
@@ -48,7 +47,7 @@ public class sumAdjacentEqualNumbers {
     }
 
 
-    private static List<Integer> nextLineOfDoubles(Scanner scanner) {
+    private static List<Integer> nextLineOfIntegers(Scanner scanner) {
         List<Integer> numbers = new ArrayList<>();
         String lineOfNumbers = scanner.nextLine();
         String[] numbersAsString = lineOfNumbers.split(" ");
