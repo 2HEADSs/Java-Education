@@ -16,13 +16,12 @@ public class mergingLists {
         int indexA = 0;
         int indexB = 0;
         while (indexA < sortedA.size() ||indexB < sortedB.size()){
-            int a = sortedA.get(indexA);
-            int b = sortedA.get(indexB);
-            if(a > b){
-                merged.add(a);
+
+            if(indexA < sortedA.size() && sortedA.get(indexA) > sortedB.get(indexB)){
+                merged.add(sortedA.get(indexA));
                 indexA++;
             } else {
-                merged.add(b);
+                merged.add(sortedB.get(indexB));
                 indexB++;
             }
         }
@@ -30,7 +29,7 @@ public class mergingLists {
 
 
         for(int number:merged){
-            System.out.println(number + " ");
+            System.out.print(number + " ");
         }
     }
 
