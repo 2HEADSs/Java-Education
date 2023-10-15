@@ -25,7 +25,6 @@ public class houseParty {
                 if (guests.contains(name)) {
                     guests.remove(name);
                 } else {
-                    guests.add(name);
                     System.out.printf("%s is not in the list!%n", name);
 
                 }
