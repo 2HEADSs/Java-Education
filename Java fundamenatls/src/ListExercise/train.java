@@ -12,6 +12,25 @@ public class train {
         List<Integer> wagons = Arrays.stream(scanner.nextLine()
                 .split("\\s+")).map(Integer::parseInt)
                 .collect(Collectors.toList());
+
+        int maxCapacity = Integer.parseInt(scanner.nextLine());
+        String line = scanner.nextLine();
+
+        while(!line.equals("end")){
+            String[] data = line.split(" ");
+            if(data[0].equals("Add")){
+                wagons.add(Integer.parseInt(data[1]));
+            } else {
+                int passengers = Integer.parseInt(data[0]);
+                for (int i = 0; i < wagons.size(); i++) {
+                        if((wagons.get(i) + passengers) <= maxCapacity){
+                            wagons.set(i, wagons.get(i) + passengers);
+                        }
+                }
+            }
+
+            line = scanner.nextLine();
+        }
         System.out.println(wagons);
     }
 }
