@@ -27,11 +27,7 @@ public class listOperations {
                 case "Insert":
                     int number = Integer.parseInt(data[1]);
                     int index = Integer.parseInt(data[2]);
-                    if (index < 0 || index >= numbers.size()) {
-                        System.out.println("Invalid index");
-                    } else {
-                        numbers.add(index, number);
-                    }
+                    insertElement(number, index, numbers);
                     break;
                 case "Remove":
                     index = Integer.parseInt(data[1]);
@@ -63,5 +59,12 @@ public class listOperations {
             line = scanner.nextLine();
         }
         numbers.forEach((el -> System.out.print(el + " ")));
+    }
+    public static void insertElement(int element, int index, List<Integer> nums){
+        if (index < 0 || index >= nums.size()) {
+            System.out.println("Invalid index");
+        } else {
+            nums.add(index, element);
+        }
     }
 }
