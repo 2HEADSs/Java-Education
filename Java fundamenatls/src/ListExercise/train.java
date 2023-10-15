@@ -25,6 +25,7 @@ public class train {
                 for (int i = 0; i < wagons.size(); i++) {
                         if((wagons.get(i) + passengers) <= maxCapacity){
                             wagons.set(i, wagons.get(i) + passengers);
+                            break;
                         }
                 }
             }
@@ -32,5 +33,6 @@ public class train {
             line = scanner.nextLine();
         }
         System.out.println(wagons);
+
     }
 }
