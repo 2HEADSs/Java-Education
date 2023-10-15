@@ -19,8 +19,11 @@ public class bombNumbers {
 
         while (numbers.contains(bomb)) {
             int bombIndex = numbers.indexOf(bomb);
-            int start = bombIndex - power;
-            int end = bombIndex + power;
+//            int start = bombIndex - power;
+//            int end = bombIndex + power;
+
+            int start = Math.max(bombIndex - power, 0);
+            int end = Math.min(bombIndex + power, numbers.size()-1);
 
             if (start < 0) {
                 start = 0;
