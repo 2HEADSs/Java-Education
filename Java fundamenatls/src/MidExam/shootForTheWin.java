@@ -11,10 +11,15 @@ public class shootForTheWin {
         int totalShot = 0;
 
         while (!command.equals("End")) {
-            int targetIndex =  Integer.parseInt(command);
+            int targetIndex = Integer.parseInt(command);
 
-            if(isValidIndex(targets, targetIndex)){
-
+            if (isValidIndex(targets, targetIndex)) {
+                int shotTarget = targets[targetIndex];
+                if (shotTarget != -1) {
+                    totalShot++;
+                    targets[targetIndex] = -1;
+                    registerTargetHit(targets, shotTarget);
+                }
             }
 
             command = scanner.nextLine();
@@ -26,8 +31,21 @@ public class shootForTheWin {
 
     }
 
+    private static void registerTargetHit(int[] targets, int shotTarget) {
+        for (int i = 0; i < targets.length; i++) {
+            if (targets[i] != -1) {
+                if (targets[i] > shotTarget) {
+                    targets[i] -= shotTarget;
+                } else {
+                    targets[i] += shotTarget;
+                }
+            }
+
+        }
+    }
+
     private static boolean isValidIndex(int[] targets, int targetIndex) {
-        return targetIndex > 0 && targetIndex < targets.length;
+        return targetIndex >= 0 && targetIndex < targets.length;
     }
 
     private static void printArray(int[] array, String separator) {
@@ -40,8 +58,8 @@ public class shootForTheWin {
     }
 
     private static int[] getNextIntArray(Scanner scanner) {
-        String [] intAsStrings =  scanner.nextLine().split("\\s+");
-        int [] array = new int [intAsStrings.length];
+        String[] intAsStrings = scanner.nextLine().split("\\s+");
+        int[] array = new int[intAsStrings.length];
         for (int i = 0; i < array.length; i++) {
             array[i] = Integer.parseInt(intAsStrings[i]);
         }
