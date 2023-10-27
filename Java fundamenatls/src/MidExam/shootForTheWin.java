@@ -5,18 +5,36 @@ import java.util.Scanner;
 public class shootForTheWin {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] target = getNextIntArray(scanner);
-
+        int[] targets = getNextIntArray(scanner);
         String command = scanner.nextLine();
+        int totalShot = 0;
+
         while (!command.equals("End")) {
             command = scanner.nextLine();
+        }
+
+        System.out.printf("Shot targets %d -> ", totalShot);
+
+        printArray(targets, " ");
+
+    }
+
+    private static void printArray(int[] array, String separator) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i < array.length - 1) {
+                System.out.print(" ");
+            }
         }
     }
 
     private static int[] getNextIntArray(Scanner scanner) {
-
-
-        return new int[0];
+        String [] intAsStrings =  scanner.nextLine().split("\\s+");
+        int [] array = new int [intAsStrings.length];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Integer.parseInt(intAsStrings[i]);
+        }
+        return array;
     }
 
 }
