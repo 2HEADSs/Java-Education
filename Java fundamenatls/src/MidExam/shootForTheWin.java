@@ -12,6 +12,11 @@ public class shootForTheWin {
 
         while (!command.equals("End")) {
             int targetIndex =  Integer.parseInt(command);
+
+            if(isValidIndex(targets, targetIndex)){
+
+            }
+
             command = scanner.nextLine();
         }
 
@@ -19,6 +24,10 @@ public class shootForTheWin {
 
         printArray(targets, " ");
 
+    }
+
+    private static boolean isValidIndex(int[] targets, int targetIndex) {
+        return targetIndex > 0 && targetIndex < targets.length;
     }
 
     private static void printArray(int[] array, String separator) {
