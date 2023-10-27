@@ -25,7 +25,7 @@ public class shootForTheWin {
             command = scanner.nextLine();
         }
 
-        System.out.printf("Shot targets %d -> ", totalShot);
+        System.out.printf("Shot targets: %d -> ", totalShot);
 
         printArray(targets, " ");
 
