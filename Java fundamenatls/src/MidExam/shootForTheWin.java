@@ -5,11 +5,13 @@ import java.util.Scanner;
 public class shootForTheWin {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         int[] targets = getNextIntArray(scanner);
         String command = scanner.nextLine();
         int totalShot = 0;
 
         while (!command.equals("End")) {
+            int targetIndex =  Integer.parseInt(command);
             command = scanner.nextLine();
         }
 
