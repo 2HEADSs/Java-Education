@@ -10,6 +10,21 @@ public class heartDelivery {
         String command = scanner.nextLine();
 
         while (!command.equals("Love!")) {
+            String[] commandAndParameter = command.split(" ");
+            int jump = Integer.parseInt(commandAndParameter[1]);
+            currentPosition += jump;
+            if (currentPosition > houses.length - 1) {
+                currentPosition = 0;
+            }
+            if (houses[currentPosition] > 0) {
+                houses[currentPosition] -= 2;
+                if (houses[currentPosition] == 0) {
+                    System.out.printf("Place %d has Valentine's day.%n", currentPosition);
+
+                }
+            } else {
+                System.out.printf("Place %d already had Valentine's day.%n", currentPosition);
+            }
 
             command = scanner.nextLine();
         }
