@@ -13,7 +13,7 @@ public class heartDelivery {
             String[] commandAndParameter = command.split(" ");
             int jump = Integer.parseInt(commandAndParameter[1]);
             currentPosition += jump;
-            if (currentPosition > houses.length - 1) {
+            if (currentPosition >= houses.length) {
                 currentPosition = 0;
             }
             if (houses[currentPosition] > 0) {
