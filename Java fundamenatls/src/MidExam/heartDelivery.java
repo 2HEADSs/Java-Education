@@ -6,11 +6,14 @@ public class heartDelivery {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] houses  = getNextIntArray(scanner, "@");
+        int currentPosition = 0;
         String command = scanner.nextLine();
 
-        while(command.equals("Love!")){
+        while(!command.equals("Love!")){
 
+            command = scanner.nextLine();
         }
+        System.out.println("Cupid's last position was %d.%n", currentPosition);
     }
 
     private static int[] getNextIntArray(Scanner scanner, String separator) {
