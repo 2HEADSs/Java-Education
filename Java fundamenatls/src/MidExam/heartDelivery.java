@@ -13,7 +13,9 @@ public class heartDelivery {
 
             command = scanner.nextLine();
         }
-        System.out.println("Cupid's last position was %d.%n", currentPosition);
+        System.out.printf("Cupid's last position was %d.%n", currentPosition);
+        System.out.printf("Cupid has failed %d places.%n", currentPosition);
+        System.out.println("Mission was successful.");
     }
 
     private static int[] getNextIntArray(Scanner scanner, String separator) {
