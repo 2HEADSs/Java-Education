@@ -13,8 +13,14 @@ public class heartDelivery {
 
             command = scanner.nextLine();
         }
+        int failed = 0;
+        for (int i = 0; i < houses.length; i++) {
+            if(houses[i] !=0){
+                failed++;
+            }
+        }
         System.out.printf("Cupid's last position was %d.%n", currentPosition);
-        System.out.printf("Cupid has failed %d places.%n", currentPosition);
+        System.out.printf("Cupid has failed %d places.%n", failed);
         System.out.println("Mission was successful.");
     }
 
