@@ -25,17 +25,17 @@ public class computerStore {
         } else {
             System.out.println("Congratulations you've just bought a new computer!");
 
-            System.out.printf("Price without taxes: %.2f$.%n", price);
+            System.out.printf("Price without taxes: %.2f$%n", price);
             double taxes = price * 0.2;
-            System.out.printf("Taxes: %.2f$.%n", price);
+            System.out.printf("Taxes: %.2f$%n", taxes);
             price += taxes;
 
             if (command.equals("special")) {
-                price *= 0.8;
+                price *= 0.9;
             }
             System.out.println("-----------");
 
-            System.out.printf("Total price: %.2f$.%n", price);
+            System.out.printf("Total price: %.2f$%n", price);
 
 
         }
