@@ -11,7 +11,16 @@ public class manOWar {
         String command = scanner.nextLine();
 
         while (!command.equals("Retire")){
-                
+            String[] commandAndParameter = command.split(" ");
+            String typeOfCommand = commandAndParameter[0];
+            switch (typeOfCommand){
+                case "Fire":
+                    
+                    break;
+
+            }
+
+            command = scanner.nextLine();
         }
 
 
