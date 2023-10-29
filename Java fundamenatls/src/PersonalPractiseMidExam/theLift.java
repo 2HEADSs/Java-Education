@@ -14,7 +14,6 @@ public class theLift {
                 break;
             }
             int currentWagon = wagons[i];
-            //sure
             if (currentWagon < limit) {
                 int difference = limit - currentWagon;
                 if (difference > waitingPeople) {
