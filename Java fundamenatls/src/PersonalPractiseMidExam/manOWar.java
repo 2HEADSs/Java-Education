@@ -2,23 +2,14 @@ package PersonalPractiseMidExam;
 
 import java.util.Scanner;
 
-public class movingTarget {
+public class manOWar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] targets = getNextIntArray(scanner, " ");
-        String[] comandAray = scanner.nextLine().split(" ");
+        int[] pirateShip = getNextIntArray(scanner, ">");
+        int[] warShip = getNextIntArray(scanner, ">");
+        int maxHealth = Integer.parseInt(scanner.nextLine());
+        
 
-        while (!comandAray[0].equals("End")){
-            String command = comandAray[0];
-            int index = Integer.parseInt(comandAray[1]);
-            int secondParam = Integer.parseInt(comandAray[2]);
-            switch (command){
-                case"Shoot":
-
-            }
-             comandAray = scanner.nextLine().split(" ");
-
-        }
 
 
     }
