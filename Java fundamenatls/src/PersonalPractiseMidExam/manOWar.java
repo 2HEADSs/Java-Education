@@ -8,7 +8,11 @@ public class manOWar {
         int[] pirateShip = getNextIntArray(scanner, ">");
         int[] warShip = getNextIntArray(scanner, ">");
         int maxHealth = Integer.parseInt(scanner.nextLine());
-        
+        String command = scanner.nextLine();
+
+        while (!command.equals("Retire")){
+                
+        }
 
 
 
