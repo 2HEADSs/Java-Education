@@ -8,6 +8,7 @@ public class manOWar {
         int[] pirateShip = getNextIntArray(scanner, ">");
         int[] warShip = getNextIntArray(scanner, ">");
         int maxHealth = Integer.parseInt(scanner.nextLine());
+        double minimumHealth = maxHealth * 0.2;
         String command = scanner.nextLine();
 
         while (!command.equals("Retire")){
@@ -16,16 +17,50 @@ public class manOWar {
             switch (typeOfCommand){
                 case "Fire":
                     int index= Integer.parseInt(commandAndParameter[1]);
-                    int damage = Integer.parseInt(commandAndParameter[2]);
+                    int damageWarShip = Integer.parseInt(commandAndParameter[2]);
                     if(index>=0 && index < warShip.length){
-                        warShip[index] -= damage;
+                        warShip[index] -= damageWarShip;
                         if(warShip[index] <=0){
                             System.out.println("You won! The enemy ship has sunken.");
                             break;
                         }
                     }
                     break;
-                    
+                case "Defend":
+                    int startIndex= Integer.parseInt(commandAndParameter[1]);
+                    int endIndex= Integer.parseInt(commandAndParameter[2]);
+                    int damagePirateShip = Integer.parseInt(commandAndParameter[2]);
+
+                    if((startIndex >=0 && startIndex < pirateShip.length) && (endIndex>=0 && endIndex < pirateShip.length )){
+                        for (int i = startIndex; i <=endIndex ; i++) {
+                            pirateShip[i] -= damagePirateShip;
+                            if(pirateShip[i] <=0){
+                                System.out.println("You lost! The pirate ship has sunken.");
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                case "Repair":
+                    int repairIndexSection = Integer.parseInt(commandAndParameter[1]);
+                    int repairhealth = Integer.parseInt(commandAndParameter[2]);
+                    if(repairIndexSection >=0 || repairhealth < pirateShip.length){
+                        pirateShip[repairIndexSection] += repairhealth;
+                        if(pirateShip[repairIndexSection] >maxHealth){
+                            pirateShip[repairIndexSection] = maxHealth;
+                        }
+                    }
+                    break;
+                case "Status":
+                    int countSectionForRepair=0;
+                    for (int i = 0; i < pirateShip.length; i++) {
+                        if(pirateShip[i] < minimumHealth){
+                            countSectionForRepair++;
+                        }
+                    }
+                    System.out.println(countSectionForRepair);
+                    break;
+
 
             }
 
