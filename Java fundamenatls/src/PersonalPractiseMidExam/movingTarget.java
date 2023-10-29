@@ -12,6 +12,11 @@ public class movingTarget {
             String command = comandAray[0];
             int index = Integer.parseInt(comandAray[1]);
             int secondParam = Integer.parseInt(comandAray[2]);
+            switch (command){
+                case"Shoot":
+
+            }
+             comandAray = scanner.nextLine().split(" ");
 
         }
 
