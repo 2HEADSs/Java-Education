@@ -13,16 +13,16 @@ public class manOWar {
         boolean warHasSunk = false;
         String command = scanner.nextLine();
 
-        while (!command.equals("Retire")){
+        while (!command.equals("Retire")) {
             String[] commandAndParameter = command.split(" ");
             String typeOfCommand = commandAndParameter[0];
-            switch (typeOfCommand){
+            switch (typeOfCommand) {
                 case "Fire":
-                    int index= Integer.parseInt(commandAndParameter[1]);
+                    int index = Integer.parseInt(commandAndParameter[1]);
                     int damageWarShip = Integer.parseInt(commandAndParameter[2]);
-                    if(index>=0 && index < warShip.length){
+                    if (index >= 0 && index < warShip.length) {
                         warShip[index] -= damageWarShip;
-                        if(warShip[index] <=0){
+                        if (warShip[index] <= 0) {
                             System.out.println("You won! The enemy ship has sunken.");
                             warHasSunk = true;
                             break;
@@ -30,14 +30,14 @@ public class manOWar {
                     }
                     break;
                 case "Defend":
-                    int startIndex= Integer.parseInt(commandAndParameter[1]);
-                    int endIndex= Integer.parseInt(commandAndParameter[2]);
-                    int damagePirateShip = Integer.parseInt(commandAndParameter[2]);
+                    int startIndex = Integer.parseInt(commandAndParameter[1]);
+                    int endIndex = Integer.parseInt(commandAndParameter[2]);
+                    int damagePirateShip = Integer.parseInt(commandAndParameter[3]);
 
-                    if((startIndex >=0 && startIndex < pirateShip.length) && (endIndex>=0 && endIndex < pirateShip.length )){
-                        for (int i = startIndex; i <=endIndex ; i++) {
+                    if ((startIndex >= 0 && startIndex < pirateShip.length) && (endIndex >= 0 && endIndex < pirateShip.length)) {
+                        for (int i = startIndex; i <= endIndex; i++) {
                             pirateShip[i] -= damagePirateShip;
-                            if(pirateShip[i] <=0){
+                            if (pirateShip[i] <= 0) {
                                 System.out.println("You lost! The pirate ship has sunken.");
                                 pirateHasSunk = true;
                                 break;
@@ -48,30 +48,42 @@ public class manOWar {
                 case "Repair":
                     int repairIndexSection = Integer.parseInt(commandAndParameter[1]);
                     int repairhealth = Integer.parseInt(commandAndParameter[2]);
-                    if(repairIndexSection >=0 || repairhealth < pirateShip.length){
+                    if (repairIndexSection >= 0 || repairIndexSection < pirateShip.length) {
                         pirateShip[repairIndexSection] += repairhealth;
-                        if(pirateShip[repairIndexSection] >maxHealth){
+                        if (pirateShip[repairIndexSection] > maxHealth) {
                             pirateShip[repairIndexSection] = maxHealth;
                         }
                     }
                     break;
                 case "Status":
-                    int countSectionForRepair=0;
+                    int countSectionForRepair = 0;
                     for (int i = 0; i < pirateShip.length; i++) {
-                        if(pirateShip[i] < minimumHealth){
+                        if (pirateShip[i] < minimumHealth) {
                             countSectionForRepair++;
                         }
                     }
-                    System.out.printf(" %d sections need repair.", countSectionForRepair);
+                    System.out.printf("%d sections need repair.%n", countSectionForRepair);
                     break;
             }
 
-            if(warHasSunk == true || pirateHasSunk == true){
+            if (warHasSunk == true || pirateHasSunk == true) {
                 break;
             }
             command = scanner.nextLine();
         }
+        if(!warHasSunk &&  !pirateHasSunk){
+            int pirateShipStatus = 0;
+            int warShipStatus = 0;
+            for (int i = 0; i < pirateShip.length; i++) {
+                pirateShipStatus+=pirateShip[i];
+            }
+            for (int i = 0; i < warShip.length; i++) {
+                warShipStatus+=warShip[i];
+            }
+            System.out.printf("Pirate ship status: %d%n", pirateShipStatus);
+            System.out.printf("Warship status: %d%n", warShipStatus);
 
+        }
 
 
     }
