@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class theLift {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int waitingPeople = scanner.nextInt();
+        int waitingPeople = Integer.parseInt(scanner.nextLine());
         int [] wagons = getNextIntArray(scanner, " ");
+        System.out.println(waitingPeople);
+        System.out.println(wagons);
     }
 
     private static int[] getNextIntArray(Scanner scanner, String separator){
