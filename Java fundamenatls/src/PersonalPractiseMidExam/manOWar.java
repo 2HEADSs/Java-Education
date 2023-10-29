@@ -15,8 +15,17 @@ public class manOWar {
             String typeOfCommand = commandAndParameter[0];
             switch (typeOfCommand){
                 case "Fire":
-                    
+                    int index= Integer.parseInt(commandAndParameter[1]);
+                    int damage = Integer.parseInt(commandAndParameter[2]);
+                    if(index>=0 && index < warShip.length){
+                        warShip[index] -= damage;
+                        if(warShip[index] <=0){
+                            System.out.println("You won! The enemy ship has sunken.");
+                            break;
+                        }
+                    }
                     break;
+                    
 
             }
 
