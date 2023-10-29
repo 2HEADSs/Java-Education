@@ -9,6 +9,8 @@ public class manOWar {
         int[] warShip = getNextIntArray(scanner, ">");
         int maxHealth = Integer.parseInt(scanner.nextLine());
         double minimumHealth = maxHealth * 0.2;
+        boolean pirateHasSunk = false;
+        boolean warHasSunk = false;
         String command = scanner.nextLine();
 
         while (!command.equals("Retire")){
@@ -22,6 +24,7 @@ public class manOWar {
                         warShip[index] -= damageWarShip;
                         if(warShip[index] <=0){
                             System.out.println("You won! The enemy ship has sunken.");
+                            warHasSunk = true;
                             break;
                         }
                     }
@@ -36,6 +39,7 @@ public class manOWar {
                             pirateShip[i] -= damagePirateShip;
                             if(pirateShip[i] <=0){
                                 System.out.println("You lost! The pirate ship has sunken.");
+                                pirateHasSunk = true;
                                 break;
                             }
                         }
@@ -58,12 +62,13 @@ public class manOWar {
                             countSectionForRepair++;
                         }
                     }
-                    System.out.println(countSectionForRepair);
+                    System.out.printf(" %d sections need repair.", countSectionForRepair);
                     break;
-
-
             }
 
+            if(warHasSunk == true || pirateHasSunk == true){
+                break;
+            }
             command = scanner.nextLine();
         }
 
