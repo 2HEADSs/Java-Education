@@ -22,7 +22,7 @@ public class Students {
         }
 
         String getInfo(){
-            return  String.format("%s %s is %d years old.",this.firstName,this.lastName, this.age);
+            return  String.format("%s %s is %d years old",this.firstName,this.lastName, this.age);
         }
     }
 
@@ -34,8 +34,9 @@ public class Students {
             String [] studentParameters = line.split("\\s+");
             String firstName = studentParameters[0];
             String lastName = studentParameters[1];
-            int age = (Integer.parseInt(studentParameters[2]);
+            int age = (Integer.parseInt(studentParameters[2]));
             String city = studentParameters[3];
+
             students.add(new Student(firstName,lastName,age,city));
 
 
