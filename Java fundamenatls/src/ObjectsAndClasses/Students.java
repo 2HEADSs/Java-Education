@@ -9,8 +9,7 @@ public class Students {
         String firstName;
         String lastName;
         int age;
-        private final String city;
-        String ciy;
+        String city;
         Student(String firstName, String lastName, int age,String city){
 
             this.firstName = firstName;
