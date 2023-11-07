@@ -34,6 +34,12 @@ public class Students2 {
         String getLastName() {
             return this.lastName;
         }
+        void setAge(int age){
+            this.age = age;
+        }
+        void setCity(String city){
+            this.city = city;
+        }
     }
 
     public static void main(String[] args) {
@@ -47,11 +53,13 @@ public class Students2 {
             int age = (Integer.parseInt(studentParameters[2]));
             String city = studentParameters[3];
 
-            int index = indexOfStudent(students, firstName, lastName);
-            if (index == -1) {
+            Student existing = findStudent(students, firstName, lastName);
+            if (existing == null) {
                 students.add(new Student(firstName, lastName, age, city));
             } else {
-                students.set(index, new Student(firstName, lastName, age, city));
+                existing.setAge(age);
+                existing.setAge(age);
+
 
             }
             line = scanner.nextLine();
