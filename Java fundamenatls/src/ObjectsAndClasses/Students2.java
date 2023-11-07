@@ -54,8 +54,6 @@ public class Students2 {
                 students.set(index, new Student(firstName, lastName, age, city));
 
             }
-
-
             line = scanner.nextLine();
         }
         String city = scanner.nextLine();
@@ -65,6 +63,17 @@ public class Students2 {
             }
         }
     }
+    private  static  Student findStudent(List<Student> students, String firstName, String lastName){
+        for (int i = 0; i < students.size(); i++) {
+            Student s = students.get(i);
+            if (s.getFirstName().equals(firstName) && s.getLastName().equals(lastName)) {
+                return s;
+
+            }
+        }
+        return null;
+    }
+
 
     private static int indexOfStudent(List<Student> students, String firstName, String lastName) {
         for (int i = 0; i < students.size(); i++) {
