@@ -58,7 +58,7 @@ public class Students2 {
                 students.add(new Student(firstName, lastName, age, city));
             } else {
                 existing.setAge(age);
-                existing.setAge(age);
+                existing.setCity(city);
 
 
             }
