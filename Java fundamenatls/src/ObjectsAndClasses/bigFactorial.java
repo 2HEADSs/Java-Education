@@ -1,10 +1,12 @@
 package ObjectsAndClasses;
 
 import java.math.BigInteger;
+import java.util.Scanner;
 
 public class bigFactorial {
     public static void main(String[] args) {
-        int n = 5;
+        Scanner scanner = new Scanner(System.in);
+        int n =Integer.parseInt(scanner.nextLine());
         BigInteger factorial = BigInteger.valueOf(1);
 
         for (int i = 1; i <= n; i++) {
