@@ -16,7 +16,9 @@ public class demo {
         Person person3 = new Person("Ivan", 21);
 
         List<Person> persons = new ArrayList<>(Arrays.asList(person1, person2, person3));
-        persons.stream().sorted((p1, p2) -> Integer.compare(p1.year, p2.year))
+//                Ascending order
+//        persons.stream().sorted((p1, p2) -> Integer.compare(p2.year, p1.year))
+        persons.stream().sorted((p1, p2) -> Integer.compare(p2.year, p1.year))
                 .forEach(s -> System.out.println(s.getData()));
 
 //        System.out.println(person1.getData());
