@@ -29,9 +29,7 @@ public class demo {
         int year;
 
         Person() {
-        }
-
-        ;
+        };
 
         Person(String name, int year) {
             this.name = name;
