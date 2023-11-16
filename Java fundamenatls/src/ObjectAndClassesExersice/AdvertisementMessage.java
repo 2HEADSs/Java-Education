@@ -1,5 +1,6 @@
 package ObjectAndClassesExersice;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class AdvertisementMessage {
@@ -32,14 +33,15 @@ public class AdvertisementMessage {
                 "Annie",
                 "Eva"};
         String[] cities = {"Burgas", "Sofia", "Plovdiv", "Varna", "Ruse"};
-        
+        Random random = new Random();
         void printMessages(int messages) {
+
             for (int i = 0; i < messages; i++) {
                 System.out.printf("%s %s %s - %s%n",
-                        this.phrases[0],
-                        this.events[0],
-                        this.authors[0],
-                        this.cities[0]);
+                        this.phrases[random.nextInt(this.phrases.length)],
+                        this.events[random.nextInt(this.events.length)],
+                        this.authors[random.nextInt(this.authors.length)],
+                        this.cities[random.nextInt(this.cities.length)]);
             }
         }
     }
