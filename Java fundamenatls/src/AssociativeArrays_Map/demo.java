@@ -19,7 +19,8 @@ public class demo {
         String removedEement =  classification.remove(4);
         System.out.println(removedEement);
 
-//        Map<Integer, String> classification2 = new HashMap<>();
+        classification.put(4,"Joro konstantinov");
+
 
     }
 }
