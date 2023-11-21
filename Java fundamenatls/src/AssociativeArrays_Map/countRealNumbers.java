@@ -13,8 +13,8 @@ public class countRealNumbers {
 
         Map<Double, Integer> numberCounts = new TreeMap<>();
         for (double number : numbers) {
-            if (numberCounts.containsKey(number)) {
-                Integer currentCount = numberCounts.get(number);
+            Integer currentCount = numberCounts.get(number);
+            if (currentCount != null) {
                 numberCounts.put(number, currentCount + 1);
             } else {
                 numberCounts.put(number, 1);
