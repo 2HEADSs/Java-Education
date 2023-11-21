@@ -11,17 +11,18 @@ public class countRealNumbers {
                         .split(" "))
                 .mapToDouble(Double::parseDouble).toArray();
 
-        Map<Double, Integer> numberCounts = new HashMap<>();
+        Map<Double, Integer> numberCounts = new TreeMap<>();
         for (double number : numbers) {
             if (numberCounts.containsKey(number)) {
                 Integer currentCount = numberCounts.get(number);
                 numberCounts.put(number, currentCount + 1);
-
             } else {
                 numberCounts.put(number, 1);
             }
         }
-
+        for (Map.Entry<Double, Integer> entry : numberCounts.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
 
     }
 
