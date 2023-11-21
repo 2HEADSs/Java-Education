@@ -13,7 +13,13 @@ public class countRealNumbers {
 
         Map<Double, Integer> numberCounts = new HashMap<>();
         for (double number : numbers) {
-                
+            if (numberCounts.containsKey(number)) {
+                Integer currentCount = numberCounts.get(number);
+                numberCounts.put(number, currentCount + 1);
+
+            } else {
+                numberCounts.put(number, 1);
+            }
         }
 
 
