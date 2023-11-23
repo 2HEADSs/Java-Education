@@ -12,14 +12,23 @@ public class DemoTask {
         for (String word : words) {
             int key = word.length();
             List<String> values = wordsByLength.get(key);
-            if(values != null){
+            if (values != null) {
                 values.add(word);
             } else {
                 values = new ArrayList<>();
-                wordsByLength.put(key,values);
+                wordsByLength.put(key, values);
                 values.add(word);
             }
         }
+
+        for (Map.Entry<Integer, List<String>> entry : wordsByLength.entrySet()) {
+            System.out.println(entry.getKey() + " ->");
+            for (String word : entry.getValue()) {
+                System.out.print(word + " ");
+            }
+
+        }
+
 
     }
 }
