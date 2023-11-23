@@ -16,16 +16,17 @@ public class DemoTask {
                 values.add(word);
             } else {
                 values = new ArrayList<>();
-                wordsByLength.put(key, values);
                 values.add(word);
+                wordsByLength.put(key, values);
             }
         }
 
         for (Map.Entry<Integer, List<String>> entry : wordsByLength.entrySet()) {
-            System.out.println(entry.getKey() + " ->");
+            System.out.print(entry.getKey() + " -> ");
             for (String word : entry.getValue()) {
                 System.out.print(word + " ");
             }
+            System.out.print( "\n");
 
         }
 
