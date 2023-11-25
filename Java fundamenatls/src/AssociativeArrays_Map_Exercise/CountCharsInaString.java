@@ -1,5 +1,6 @@
 package AssociativeArrays_Map_Exercise;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -7,11 +8,17 @@ public class CountCharsInaString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] text = scanner.nextLine().split(" ");
-        for (String string : text) {
-            for (int i = 0; i < string.length(); i++) {
-                char symbol = string.charAt(i);
+        Map<Character, Integer> result = new LinkedHashMap<>();
+        for (String singleString : text) {
+            for (int i = 0; i < singleString.length(); i++) {
+                char symbol = singleString.charAt(i);
+                if (!result.containsKey(symbol)) {
+                    result.put(symbol, 1);
+                } else {
+                    result.put(symbol, result.get(symbol) + 1);
+                }
             }
         }
-//        Map<Character, Integer>
+        System.out.println(result);
     }
 }
