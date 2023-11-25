@@ -19,6 +19,6 @@ public class CountCharsInaString {
                 }
             }
         }
-        System.out.println(result);
+        result.forEach((key, value) -> System.out.printf("%c -> %d%n",key,value));
     }
 }
