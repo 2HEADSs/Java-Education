@@ -22,8 +22,9 @@ public class MinerTask {
             line = scanner.nextLine();
         }
 
-        for(String key: resources.keySet()){
-            System.out.printf("%s -> %d%n", key, resources.get(key));
-        }
+//        for(String key: resources.keySet()){
+//            System.out.printf("%s -> %d%n", key, resources.get(key));
+//        }
+        resources.forEach((k,v) -> System.out.printf("%s -> %d%n",k,v));
     }
 }
