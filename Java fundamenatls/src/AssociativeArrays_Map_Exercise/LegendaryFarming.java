@@ -12,6 +12,10 @@ public class LegendaryFarming {
         materials.put("shards",0);
         materials.put("fragments",0);
         materials.put("motes",0);
+        Map<String, String> items = new HashMap<>();
+        items.put("shards", "Shadowmourne obtained!");
+        items.put("fragments", "Valanyr obtained!");
+        items.put("motes", "Dragonwrath obtained!");
         String winner = "";
         boolean hasWinner = false;
         while (!hasWinner) {
@@ -36,13 +40,7 @@ public class LegendaryFarming {
                 }
             }
         }
-        if (winner.equals("shards")) {
-            System.out.println("Shadowmourne obtained!");
-        } else if (winner.equals("fragments")) {
-            System.out.println("Valanyr obtained!");
-        } else if (winner.equals("motes")) {
-            System.out.println("Dragonwrath obtained!");
-        }
+        System.out.println(items.get(winner));
 
         materials.forEach((k,v)-> System.out.printf("%s: %d%n",k,v));
 
