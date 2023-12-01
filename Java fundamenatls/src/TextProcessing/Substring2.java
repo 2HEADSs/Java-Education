@@ -11,6 +11,8 @@ public class Substring2 {
         int index = text.indexOf(keyWord);
         while (index != -1) {
             text = text.replace(keyWord, "");
+            index = text.indexOf(keyWord);
+
         }
         System.out.println(text);
     }
