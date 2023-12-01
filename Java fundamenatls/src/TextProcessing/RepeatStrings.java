@@ -12,7 +12,7 @@ public class RepeatStrings {
 
     }
 
-    private static String repeat(String word, int repetition) {
+    static String repeat(String word, int repetition) {
         char[] repeated = new char[word.length() * repetition];
 
         for (int i = 0; i < repeated.length; i++) {
