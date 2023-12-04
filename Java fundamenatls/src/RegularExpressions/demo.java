@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 
 public class demo {
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("regex");
+        Pattern pattern = Pattern.compile("[a-z]+");
         String text = "Lorem ipsum, or lipsum " +
                 "as it is sometimes known, " +
-                "is dummy text used in laying " +
+                "is dummy text used regex in laying " +
                 "out print, graphic or web designs. " +
                 "The passage is attributed to an unknown " +
                 "typesetter in the 15th century who is thought " +
@@ -18,8 +18,13 @@ public class demo {
 
         Matcher matcher = pattern.matcher(text);
         boolean foundSomething = matcher.find();
-        if(foundSomething){
-            System.out.println(matcher);
+        if (foundSomething) {
+            while (foundSomething) {
+                System.out.println(matcher.group());
+                foundSomething = matcher.find();
+            }
+        } else {
+            System.out.println("No match");
         }
 
 
