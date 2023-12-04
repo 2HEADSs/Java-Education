@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class demo {
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("[a-z]+");
+        Pattern pattern = Pattern.compile("(?<char>[A-Za-z]*)\\b || (?<int>[1-9]+)");
         String text = "Lorem ipsum, or lipsum " +
                 "as it is sometimes known, " +
                 "is dummy text used regex in laying " +
@@ -20,7 +20,8 @@ public class demo {
         boolean foundSomething = matcher.find();
         if (foundSomething) {
             while (foundSomething) {
-                System.out.println(matcher.group());
+                System.out.println(matcher.group("char"));
+                System.out.println(matcher.group("int"));
                 foundSomething = matcher.find();
             }
         } else {
