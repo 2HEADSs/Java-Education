@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class TheImitationGameOptimized {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        StringBuilder message = new StringBuilder(scanner.nextLine());
+        String messageInput = scanner.nextLine();
+
+        StringBuilder message = new StringBuilder(messageInput);
         String commands = scanner.nextLine();
 
         while (!commands.equals("Decode")) {
