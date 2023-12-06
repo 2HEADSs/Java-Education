@@ -13,16 +13,16 @@ public class TheImitationGame {
             String commandName = commandParts[0];
             switch (commandName) {
                 case "Move":
-
+                    message = move(message, Integer.parseInt(commandParts[1]));
                     break;
                 case "Insert":
-
+                    message = insert(message, Integer.parseInt(commandParts[1]), commandParts[2]);
                     break;
                 case "ChangeAll":
-
+                    message = changeAll(message, commandParts);
                     break;
                 default:
-                    throw  new IllegalStateException("Unknown command " + commandName);
+                    throw new IllegalStateException("Unknown command " + commandName);
             }
 
 
@@ -31,5 +31,25 @@ public class TheImitationGame {
 
         System.out.println("The decrypted message is: " + message);
 
+    }
+
+    private static String changeAll(String message, String[] commandParts) {
+        message = message.replaceAll(commandParts[1], commandParts[2]);
+        return message;
+    }
+
+    private static String insert(String message, int i, String insertChar) {
+        String firstPart = message.substring(0, i);
+        String secondPart = message.substring(i);
+
+
+        return firstPart + insertChar + secondPart;
+    }
+
+    private static String move(String message, int length) {
+        String firstPart = message.substring(0, length);
+        String secondPart = message.substring(length);
+
+        return secondPart + firstPart;
     }
 }
