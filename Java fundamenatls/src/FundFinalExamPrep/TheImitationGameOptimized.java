@@ -30,7 +30,7 @@ public class TheImitationGameOptimized {
     }
 
     private static void changeAll(StringBuilder message, String subst, String replacement) {
-         message.toString().replaceAll(subst, replacement);
+        message.replace(0, message.length(), message.toString().replace(subst, replacement));
     }
 
     private static void insert(StringBuilder message, int i, String insertChar) {
