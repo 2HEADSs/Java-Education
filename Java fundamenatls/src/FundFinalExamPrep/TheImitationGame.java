@@ -24,25 +24,18 @@ public class TheImitationGame {
                 default:
                     throw new IllegalStateException("Unknown command " + commandName);
             }
-
-
             commands = scanner.nextLine();
         }
-
         System.out.println("The decrypted message is: " + message);
-
     }
 
     private static String changeAll(String message, String[] commandParts) {
-        message = message.replaceAll(commandParts[1], commandParts[2]);
-        return message;
+        return message.replaceAll(commandParts[1], commandParts[2]);
     }
 
     private static String insert(String message, int i, String insertChar) {
         String firstPart = message.substring(0, i);
         String secondPart = message.substring(i);
-
-
         return firstPart + insertChar + secondPart;
     }
 
