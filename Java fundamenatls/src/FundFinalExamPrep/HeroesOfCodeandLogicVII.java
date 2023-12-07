@@ -25,6 +25,18 @@ public class HeroesOfCodeandLogicVII {
         public int getManaPoints() {
             return manaPoints;
         }
+
+        public boolean castSpell(int manaPoints) {
+            if (getManaPoints() >= manaPoints) {
+                this.manaPoints -= manaPoints;
+                return true;
+            }
+            return false;
+        }
+
+        public void setHitPoints(int hitPoints) {
+            this.hitPoints = hitPoints;
+        }
     }
 
     public static void main(String[] args) {
@@ -69,12 +81,28 @@ public class HeroesOfCodeandLogicVII {
 
     private static void handleCastSpell(Map<String, Hero> heroes, String heroName, int manaPoints, int spellName) {
         Hero hero = heroes.get(heroName);
+        boolean success = hero.castSpell(manaPoints);
+        if (success) {
+            System.out.println(heroName + " has successfully cast" + spellName + "and now has " + manaPoints + " MP!");
+        } else {
+            System.out.println(hero.getName() + " does not have enough MP to cast " + spellName + "!");
+        }
     }
 
     private static void handleTakeDamage(Map<String, Hero> heroes, String heroName, int demage, int attacker) {
+        Hero hero = heroes.get(heroName);
+        hero.setHitPoints(hero.getHitPoints() - demage);
+        if (hero.getHitPoints() > 0) {
+            System.out.println(hero.getName() + " was hit for " + demage + " HP by " + attacker + " and now has " + hero.getHitPoints() + " HP left!");
+        } else {
+            System.out.println(hero.getName() + " has been killed by " + attacker + "!");
+            heroes.remove(heroName);
+        }
     }
 
     private static void handleReacharge(Map<String, Hero> heroes, String heroName, int amount) {
+        Hero hero = heroes.get(heroName);
+        
     }
 
     private static void handleHeal(Map<String, Hero> heroes, String heroName, int amount) {
