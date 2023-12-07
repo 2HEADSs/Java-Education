@@ -58,6 +58,12 @@ public class ThePianist {
                     }
                     break;
                 case "Remove":
+                    if (pieces.containsKey(commandParts[1])) {
+                        pieces.remove(commandParts[1]);
+                        System.out.println("Successfully removed " + commandParts[1] + "!");
+                    } else {
+                        System.out.println("Invalid operation! " + commandParts[1] + " does not exist in the collection.");
+                    }
                     break;
                 case "ChangeKey":
                     break;
