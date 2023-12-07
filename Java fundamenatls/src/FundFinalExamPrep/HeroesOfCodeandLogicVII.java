@@ -27,7 +27,7 @@ public class HeroesOfCodeandLogicVII {
         }
 
         public boolean castSpell(int manaPoints) {
-            if (getManaPoints() >= manaPoints) {
+            if (this.getManaPoints() >= manaPoints) {
                 this.manaPoints -= manaPoints;
                 return true;
             }
@@ -37,11 +37,14 @@ public class HeroesOfCodeandLogicVII {
         public void setHitPoints(int hitPoints) {
             this.hitPoints = hitPoints;
         }
+
+        public void setManaPoints(int manaPoints) {
+            this.manaPoints = manaPoints;
+        }
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Map<String, Hero> heroes = new LinkedHashMap<>();
         int countHeroes = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < countHeroes; i++) {
@@ -50,22 +53,23 @@ public class HeroesOfCodeandLogicVII {
             Hero hero = new Hero(heroParams[0], Integer.parseInt(heroParams[1]), Integer.parseInt(heroParams[2]));
             heroes.put(hero.getName(), hero);
         }
+
         String command = scanner.nextLine();
         while (!command.equals("End")) {
-            String[] commandsPart = command.split(" – ");
+            String[] commandsPart = command.split(" - ");
             String commandName = commandsPart[0];
             switch (commandName) {
                 case "CastSpell":
-                    handleCastSpell(heroes, commandsPart[1], Integer.parseInt(commandsPart[2]), Integer.parseInt(commandsPart[3]));
+                    handleCastSpell(heroes, commandsPart[1], Integer.parseInt(commandsPart[2]), commandsPart[3]);
                     break;
                 case "TakeDamage":
-                    handleTakeDamage(heroes, commandsPart[1], Integer.parseInt(commandsPart[2]), Integer.parseInt(commandsPart[3]));
+                    handleTakeDamage(heroes, commandsPart[1], Integer.parseInt(commandsPart[2]), commandsPart[3]);
                     break;
                 case "Recharge":
                     handleReacharge(heroes, commandsPart[1], Integer.parseInt(commandsPart[2]));
                     break;
                 case "Heal":
-                    handleHeal(heroes, commandsPart[1], Integer.parseInt(commandsPart[1]));
+                    handleHeal(heroes, commandsPart[1], Integer.parseInt(commandsPart[2]));
                     break;
 //                default:
 //                    throw new IllegalStateException("Unknown command " + commandName);
@@ -79,17 +83,17 @@ public class HeroesOfCodeandLogicVII {
         }
     }
 
-    private static void handleCastSpell(Map<String, Hero> heroes, String heroName, int manaPoints, int spellName) {
+    private static void handleCastSpell(Map<String, Hero> heroes, String heroName, int manaPoints, String spellName) {
         Hero hero = heroes.get(heroName);
         boolean success = hero.castSpell(manaPoints);
         if (success) {
-            System.out.println(heroName + " has successfully cast" + spellName + "and now has " + manaPoints + " MP!");
+            System.out.println(heroName + " has successfully cast " + spellName + " and now has " + hero.getManaPoints() + " MP!");
         } else {
             System.out.println(hero.getName() + " does not have enough MP to cast " + spellName + "!");
         }
     }
 
-    private static void handleTakeDamage(Map<String, Hero> heroes, String heroName, int demage, int attacker) {
+    private static void handleTakeDamage(Map<String, Hero> heroes, String heroName, int demage, String attacker) {
         Hero hero = heroes.get(heroName);
         hero.setHitPoints(hero.getHitPoints() - demage);
         if (hero.getHitPoints() > 0) {
@@ -102,10 +106,21 @@ public class HeroesOfCodeandLogicVII {
 
     private static void handleReacharge(Map<String, Hero> heroes, String heroName, int amount) {
         Hero hero = heroes.get(heroName);
-        
+        int oldManaPoints = hero.getManaPoints();
+        int newManaPoints = Math.min(hero.getManaPoints() + amount, 200);
+        hero.setManaPoints(newManaPoints);
+        int manaRecouver = newManaPoints - oldManaPoints;
+        System.out.println(hero.getName() + " recharged for " + manaRecouver + " MP!");
+
     }
 
     private static void handleHeal(Map<String, Hero> heroes, String heroName, int amount) {
+        Hero hero = heroes.get(heroName);
+        int oldHitPoints = hero.getHitPoints();
+        int newHitPoints = Math.min(hero.getHitPoints() + amount, 100);
+        hero.setHitPoints(newHitPoints);
+        int healthRecouver = newHitPoints - oldHitPoints;
+        System.out.println(hero.getName() + " healed for " + healthRecouver + " HP!");
     }
 
 
