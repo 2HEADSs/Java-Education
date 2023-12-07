@@ -46,13 +46,16 @@ public class HeroesOfCodeandLogicVII {
             String commandName = commandsPart[0];
             switch (commandName) {
                 case "CastSpell":
-                    handleCastSpell(commandsPart[0], Integer.parseInt(commandsPart[1]), Integer.parseInt(commandsPart[2]))
+                    handleCastSpell(commandsPart[0], Integer.parseInt(commandsPart[1]), Integer.parseInt(commandsPart[2]);;
                     break;
                 case "TakeDamage":
+                    handleTakeDamage(commandsPart[0], Integer.parseInt(commandsPart[1]), Integer.parseInt(commandsPart[2]));
                     break;
                 case "Recharge":
+                    handleReacharge(commandsPart[0], Integer.parseInt(commandsPart[1]));
                     break;
                 case "Heal":
+                    handleHeal(commandsPart[0], Integer.parseInt(commandsPart[1]));
                     break;
 //                default:
 //                    throw new IllegalStateException("Unknown command " + commandName);
@@ -66,6 +69,15 @@ public class HeroesOfCodeandLogicVII {
         }
     }
 
-    private static void handleCastSpell(String s, int i, int i1) {
+    private static void handleHeal(String heroName, int amount) {
+    }
+
+    private static void handleReacharge(String heroName, int amount) {
+    }
+
+    private static void handleTakeDamage(String heroName, int demage, int attacker) {
+    }
+
+    private static void handleCastSpell(String heroName, int manaPoints, int spellName) {
     }
 }
