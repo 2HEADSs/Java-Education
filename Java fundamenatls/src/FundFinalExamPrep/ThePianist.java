@@ -46,7 +46,23 @@ public class ThePianist {
 
         String command = scanner.nextLine();
         while (!command.equals("Stop")) {
-            System.out.println(command);
+            String[] commandParts = command.split("\\|");
+            String commandName = commandParts[0];
+            switch (commandName) {
+                case "Add":
+                    if (!pieces.containsKey(commandParts[1])) {
+                        pieces.put(commandParts[1], new Piece(commandParts[1], commandParts[2], commandParts[3]));
+                        System.out.println(commandParts[1] + " by " + commandParts[2] + " in " + commandParts[3] + " added to the collection!");
+                    } else {
+                        System.out.println(commandParts[1] + " is already in the collection!");
+                    }
+                    break;
+                case "Remove":
+                    break;
+                case "ChangeKey":
+                    break;
+            }
+
             command = scanner.nextLine();
         }
     }
