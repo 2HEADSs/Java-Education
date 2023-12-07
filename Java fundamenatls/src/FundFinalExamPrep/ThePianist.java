@@ -66,10 +66,19 @@ public class ThePianist {
                     }
                     break;
                 case "ChangeKey":
+                    if (pieces.containsKey(commandParts[1])) {
+                        pieces.get(commandParts[1]).key = commandParts[2];
+                        System.out.println("Changed the key of " + commandParts[1] + " to " + commandParts[2] + "!");
+                    } else {
+                        System.out.println("Invalid operation! " + commandParts[1] + " does not exist in the collection.");
+                    }
                     break;
             }
-
             command = scanner.nextLine();
         }
+        for (Map.Entry<String, Piece> entry : pieces.entrySet()) {
+            System.out.println(entry.getKey() +" -> Composer: "+ entry.getValue().composer+", Key: "+entry.getValue().key);
+        }
+
     }
 }
